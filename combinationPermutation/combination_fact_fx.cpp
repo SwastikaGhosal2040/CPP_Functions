@@ -13,9 +13,8 @@ int fact(int x)
 
 int combination(int n, int r)
 {
-    int nfact = fact(n);
-    int rfact = fact(r);
-    int nrfact = fact(n-r);
+    int ncr = fact(n)/(fact(r)*fact(n-r));
+    return ncr;
 }
 int main()
 {
@@ -25,7 +24,7 @@ int main()
     int r;
     cout<<"Enter r : ";
     cin>>r;
-    int ncr = fact(n)/(fact(r) * fact(n-r));
+    int ncr = combination(n,r);
     cout<<n<<"C"<<r<<" : "<<ncr;
     
 
